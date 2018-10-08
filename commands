@@ -86,7 +86,7 @@ case "$1" in
     fi
     info "Adding $IP $HOSTNAME to $APP"
 
-    for CONTAINER in $(docker ps -a|grep "$APP"|awk '{print $1}'); do
+    for CONTAINER in $(docker ps|grep "$APP"|awk '{print $1}'); do
       ENTRY="$IP $HOSTNAME"
       if ! docker exec "$CONTAINER" cat etc/hosts|grep -q "$ENTRY"; then
         docker exec "$CONTAINER" sh -c "echo '$ENTRY  # hosts-plugin' >> etc/hosts"
@@ -143,7 +143,7 @@ case "$1" in
   ;;
 
   help)
-    cat && cat << EOF
+    cat << EOF
     hosts:list <app>                                Lists all custom hosts set for <app>
     hosts:add <app> <ip> <hostname>                 Sets <ip> and <hostname> for <app>
     hosts:remove <app> <hostname>                   Removes <hostname> from <app>

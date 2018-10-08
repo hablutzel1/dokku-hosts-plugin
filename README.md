@@ -3,7 +3,7 @@ Hosts Plugin for Dokku
 
 Plugin for setting `etc/hosts` entries within the app container
 
-Project: https://github.com/progrium/dokku
+Project: https://github.com/dokku/dokku
 
 **Warning: This plugin is under development and still only tested with the below dependencies**
 
@@ -20,19 +20,18 @@ For example, when you have another dokku instance running at `199.10.32.3` and y
 Requirements
 ------------
 
-Only tried with the following so far
+Last time tested with the following:
 
-* Docker version `1.5.0` or higher
-* Dokku version `0.3.15` or higher
+* Docker version `18.06.1-ce`
+* Dokku version `0.12.13`
 
 Installation
 ------------
 ```
-cd /var/lib/dokku/plugins
-git clone https://github.com/alfetopito/dokku-hosts-plugin/ hosts
+cd /var/lib/dokku/plugins/available
+git clone https://github.com/hablutzel1/dokku-hosts-plugin/ hosts
+dokku plugin:enable hosts
 ```
-
-*No need to install the plugin*
 
 Commands
 --------

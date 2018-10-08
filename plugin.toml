@@ -1,0 +1,4 @@
+[plugin]
+description = "dokku hosts plugin"
+version = "0.1.2"
+[plugin.config]
